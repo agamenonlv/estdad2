@@ -10960,7 +10960,7 @@ int binarySearch(Product products[], int low, int high, const char* target)
 	int compara = strcmp(target, products[middleIndex].name);
 
 	if (compara == 0)
-		return middleIndex;
+		return middleIndex; //Produto encontrado
 	else if (compara < 0)
 	{
 		high = middleIndex - 1;
@@ -10970,10 +10970,10 @@ int binarySearch(Product products[], int low, int high, const char* target)
 		low = middleIndex + 1;
 	}
 
-	if ((high < 0) || (low > MAX_PRODUCTS))
-		return -1; // Produto não encontrado (modificar conforme a implementação)
+	if ((high < 0) || (low >= MAX_PRODUCTS))
+		return -1; // Produto não encontrado
 	else
-		return binarySearch(products, low, high, target); // Produto encontrado
+		return binarySearch(products, low, high, target);
 }
 
 // Função de ordenação para os produtos (usada para a busca binária)
