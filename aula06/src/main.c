@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 #include "../headers/arvorebinaria.h"
 
@@ -36,5 +35,3 @@ int main() {
     printf("Pós-ordem:\n");
     exibirPosOrdem(root);
 
-    return 0;
-}
