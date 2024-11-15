@@ -35,3 +35,5 @@ int main() {
     printf("Pós-ordem:\n");
     exibirPosOrdem(root);
 
+    return 0;
+}
