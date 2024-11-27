@@ -1,4 +1,4 @@
-<h1># **CORRETOR ORTOGRÁFICO**
+<h1> # **CORRETOR ORTOGRÁFICO**
 
 ## **Projeto para a disciplina de Estrutura de Dados II**
 
