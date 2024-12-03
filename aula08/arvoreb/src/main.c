@@ -59,42 +59,42 @@ int main(void) {
     	switch (opt)
     	{
     		case (1):
-    				iniciar();
-    				printf("Entre com uma palavra para inserir no dicionário: ");
-    				scanf("%s", buffer);
-    				getchar();
-    				if (insertWord(root, buffer))
-    				{
-    					printf("Palavra %s inserida com sucesso!\nTecle <ENTER> para retornar\n? ", buffer);
-    					getchar();
-    				}
-    				else
-    				{
-    					printf("\nPalavra já cadastrada!\nTecle <ENTER> para retornar\n? ");
-    					getchar();
-    				}
-    				break;
+				iniciar();
+				printf("Entre com uma palavra para inserir no dicionário: ");
+				scanf("%s", buffer);
+				getchar();
+				if (insertWord(root, buffer))
+				{
+					printf("Palavra %s inserida com sucesso!\nTecle <ENTER> para retornar\n? ", buffer);
+					getchar();
+				}
+				else
+				{
+					printf("\nPalavra já cadastrada!\nTecle <ENTER> para retornar\n? ");
+					getchar();
+				}
+				break;
     		case (2):
-					iniciar();
-					printf("Entre com uma palavra para pesquisar no dicionário: ");
-					scanf("%s", buffer);
-					getchar();
-					printf("Busca: %s\n", searchWord(root, buffer) ? "Encontrada" : "Não encontrada");
-					printf("Tecle <ENTER> para retornar.\n? ");
-					getchar();
-    				break;
+				iniciar();
+				printf("Entre com uma palavra para pesquisar no dicionário: ");
+				scanf("%s", buffer);
+				getchar();
+				printf("Busca: %s\n", searchWord(root, buffer) ? "Encontrada" : "Não encontrada");
+				printf("Tecle <ENTER> para retornar.\n? ");
+				getchar();
+				break;
     		case (3):
-					iniciar();
-					printf("Entre com um prefixo pesquisar no dicionário: ");
-					scanf("%s", buffer);
-					getchar();
-					printf("Sugestões para '%s':\n", buffer);
-					suggestWords(root, buffer);
-					printf("Tecle <ENTER> para retornar.\n? ");
-					getchar();
-    				break;
+				iniciar();
+				printf("Entre com um prefixo pesquisar no dicionário: ");
+				scanf("%s", buffer);
+				getchar();
+				printf("Sugestões para '%s':\n", buffer);
+				suggestWords(root, buffer);
+				printf("Tecle <ENTER> para retornar.\n? ");
+				getchar();
+				break;
     		case (0):
-    				return 0;
+				return 0;
     		default:
     			clear();
     			printf("Opção inválida!\nTente novamente!\n? ");

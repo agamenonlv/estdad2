@@ -11,32 +11,34 @@
 
 #include "../headers/arvorepatricia.h"
 
+// Função principal para interação com o usuário
 int main() {
     PatriciaNode *root = NULL;
-    FILE *filePtr;
 
-    char buffer[100]; // Buffer para exibição das palavras
+    // Carregar dicionário de um arquivo (caso exista)
+    FILE *file = fopen("../dictionary/dicionario.txt", "r");
+    if (file != NULL) {
+        root = loadTreeFromFile(file);
+        fclose(file);
+    }
 
-    // Exemplo inserção de palavras  - substituir pelo arquivo dicionario.txt
-    filePtr = fopen("../dictionary/dicionario.txt", "r+");
-    root = insertPatricia(root, "carro");
-    root = insertPatricia(root, "car");
-    root = insertPatricia(root, "cat");
-    root = insertPatricia(root, "dog");
-    root = insertPatricia(root, "cart");
+    // Inserir nova palavra
+    char word[100];
+    printf("Digite uma palavra para inserir no dicionário: ");
+    scanf("%s", word);
+    insert(&root, word);
 
-    // Busca de palavras - exemplo
-    printf("Busca por 'car': %s\n", searchPatricia(root, "car") ? "Encontrada" : "Não encontrada");
-    printf("Busca por 'dog': %s\n", searchPatricia(root, "dog") ? "Encontrada" : "Não encontrada");
-    printf("Busca por 'bat': %s\n", searchPatricia(root, "bat") ? "Encontrada" : "Não encontrada");
+    // Buscar palavras com um prefixo
+    char prefix[100];
+    printf("Digite um prefixo para sugerir palavras: ");
+    scanf("%s", prefix);
+    printf("Palavras com o prefixo '%s':\n", prefix);
+    searchPrefix(root, prefix);
 
-    // Exibir todas as palavras
-    printf("\nPalavras na árvore:\n");
-    printPatricia(root, buffer, 0);
-
-    freePatricia(root);
-
-    fclose(filePtr);
+    // Salvar o dicionário de volta no arquivo
+    file = fopen("../dictionary/dicionario.txt", "w");
+    saveTreeToFile(root, file);
+    fclose(file);
 
     return 0;
 }
