@@ -1,4 +1,9 @@
 {
     "idf.pythonInstallPath": "/usr/bin/python",
-    "idf.flashType": "UART"
+    "idf.flashType": "UART",
+    "idf.espIdfPath": "/home/agamenon/esp/esp-idf",
+    "idf.toolsPath": "/home/agamenon/.espressif",
+    "idf.customExtraVars": {
+        "IDF_TARGET": "esp32"
+    }
 }
